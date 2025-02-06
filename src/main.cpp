@@ -109,6 +109,50 @@ void autonomous(void) {
   dt.setDriveVelocity(40,percent);
   dt.setTurnVelocity(40,percent);
 
+  //put the ring on the wall stake
+  wall.spinFor(forward,1.5,seconds);
+
+
+  //get the clinch
+  wall.spinFor(reverse,0.5,seconds);
+  dt.driveFor(reverse,3,inches);
+  dt.turnFor(-32,degrees);
+  dt.driveFor(reverse,15,inches);
+  useClinch();
+
+  //get the first ring
+  dt.turnFor(-67,degrees);
+  intake.spin(forward);
+  dt.driveFor(forward,9,inches);
+  wait(1,sec);
+
+  //get the second ring
+  dt.driveFor(forward,11,inches);
+  wait(1,sec);
+
+  //get the third ring
+  dt.driveFor(reverse,7,inches);
+  dt.turnFor(32,degrees);
+  dt.driveFor(forward,10,inches);
+  wait(1,sec);
+
+  //get the fourth ring
+  dt.driveFor(forward,15,inches);
+  wait(1,sec);
+
+  //get the fith ring
+  dt.turnFor(-32,degrees);
+  dt.driveFor(5,inches);
+  wait(1,sec);
+/*
+  wait(1,seconds);
+  dt.turnFor(32,degrees);
+  intake.spin(forward);
+  dt.driveFor(forward,15,inches);
+  wait(2,seconds);
+*/
+
+  /*
   wall.spinFor(1,seconds);
 
   //get the stake
@@ -127,7 +171,7 @@ void autonomous(void) {
   wait(1,sec);
   dt.driveFor(forward,7.5,inches);
   wait(3,sec);
-
+  */
 }
 
 void usercontrol(void) {
