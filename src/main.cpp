@@ -117,7 +117,7 @@ void autonomous(void) {
   wall.spinFor(reverse,0.5,seconds);
   dt.driveFor(reverse,3,inches);
   dt.turnFor(-32,degrees);
-  dt.driveFor(reverse,15,inches);
+  dt.driveFor(reverse,17,inches);
   useClinch();
 
   //get the first ring
@@ -136,14 +136,12 @@ void autonomous(void) {
   dt.driveFor(forward,10,inches);
   wait(1,sec);
 
-  //get the fourth ring
-  dt.driveFor(forward,15,inches);
+  //get the forth ring
+  dt.driveFor(forward,18,inches);
+  dt.turnFor(-35,degrees);
+  dt.driveFor(3,inches);
   wait(1,sec);
 
-  //get the fith ring
-  dt.turnFor(-32,degrees);
-  dt.driveFor(5,inches);
-  wait(1,sec);
 /*
   wait(1,seconds);
   dt.turnFor(32,degrees);
