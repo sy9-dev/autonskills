@@ -115,33 +115,45 @@ void autonomous(void) {
 
 
   //get the clinch
-  wall.spinFor(reverse,0.5,seconds);
-  dt.driveFor(reverse,2,inches);
-  dt.turnFor(-32,degrees);
-  dt.driveFor(reverse,20,inches);
+  dt.driveFor(reverse,7,inches);
+  wait(1,sec);
+  dt.turnFor(-33,degrees);
+  dt.driveFor(reverse,20,inches,false);
+  wait(1,sec);
   useClinch();
 
   //get the first ring
-  dt.turnFor(-66,degrees);
+  dt.turnFor(-62,degrees);
   intake.spin(forward);
-  dt.driveFor(forward,6,inches);
-  wait(1,sec);
+  dt.driveFor(forward,7,inches);
+  wait(3,sec);
 
   //get the second ring
   dt.driveFor(forward,11,inches);
-  wait(1,sec);
+  wait(2,sec);
 
   //get the third ring
-  dt.driveFor(reverse,7,inches);
+  dt.driveFor(reverse,5,inches);
   dt.turnFor(36,degrees);
   dt.driveFor(forward,10,inches);
-  wait(1,sec);
+  wait(2,sec);
 
-  //get the forth ring
+  //get the fourth ring
   dt.driveFor(forward,18,inches);
   dt.turnFor(-35,degrees);
-  dt.driveFor(3,inches);
-  wait(1,sec);
+  dt.driveFor(forward,6,inches);
+  wait(2,sec);
+
+ //get the fifth ring
+ dt.driveFor(reverse,6,inches);
+ dt.turnFor(-48,degrees);
+dt.driveFor(forward,18,inches);
+dt.driveFor(forward,2,inches);
+wait(2,sec);
+
+//get the sixth ring
+dt.driveFor(forward,24, inches);
+dt.turnFor(-40,degrees);
 
 /*
   wait(1,seconds);
