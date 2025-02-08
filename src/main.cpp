@@ -115,15 +115,16 @@ void autonomous(void) {
 
 
   //get the clinch
-  dt.driveFor(reverse,9,inches);
+  dt.driveFor(reverse,7,inches);
   wait(.5,sec);
   dt.turnFor(-33,degrees);
-  dt.driveFor(reverse,20,inches,false);
-  wait(.5,sec);
+  dt.driveFor(reverse,25,inches,false);
+  wait(0.65,sec);
   useClinch();
+  wait(0.2,sec);
 
   //get the first ring
-  dt.turnFor(-62,degrees);
+  dt.turnFor(-64,degrees);
   intake.spin(forward);
   dt.driveFor(forward,7,inches);
   wait(1.5,sec);
