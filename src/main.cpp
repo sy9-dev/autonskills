@@ -108,6 +108,7 @@ void pre_auton(void) {
 void autonomous(void) {
   dt.setDriveVelocity(40,percent);
   dt.setTurnVelocity(40,percent);
+  intake.setVelocity(100,percent);
 
   //put the ring on the wall stake
   wall.spinFor(forward,1.5,seconds);
@@ -115,15 +116,15 @@ void autonomous(void) {
 
   //get the clinch
   wall.spinFor(reverse,0.5,seconds);
-  dt.driveFor(reverse,3,inches);
+  dt.driveFor(reverse,2,inches);
   dt.turnFor(-32,degrees);
-  dt.driveFor(reverse,17,inches);
+  dt.driveFor(reverse,20,inches);
   useClinch();
 
   //get the first ring
-  dt.turnFor(-67,degrees);
+  dt.turnFor(-66,degrees);
   intake.spin(forward);
-  dt.driveFor(forward,9,inches);
+  dt.driveFor(forward,6,inches);
   wait(1,sec);
 
   //get the second ring
@@ -132,7 +133,7 @@ void autonomous(void) {
 
   //get the third ring
   dt.driveFor(reverse,7,inches);
-  dt.turnFor(32,degrees);
+  dt.turnFor(36,degrees);
   dt.driveFor(forward,10,inches);
   wait(1,sec);
 
