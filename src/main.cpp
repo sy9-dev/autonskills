@@ -124,15 +124,26 @@ void autonomous(void) {
   wait(0.2,sec);
 
   //get the first ring
-  dt.turnFor(-64,degrees);
+  dt.turnFor(-62,degrees);
   intake.spin(forward);
   dt.driveFor(forward,7,inches);
   wait(1.5,sec);
 
   //get the second ring
   dt.driveFor(forward,11,inches);
-  wait(1,sec);
+  wait(2,sec);
 
+  //get the third ring
+  dt.driveFor(reverse,8,inches);
+  dt.turnFor(-25,degrees);
+  dt.driveFor(forward,7,inches);
+  
+  //put into positive corner
+  dt.turnFor(-45,degrees);
+  dt.driveFor(reverse,10,inches);
+  useClinch();
+
+  /*
   //get the third ring
   dt.driveFor(reverse,5,inches);
   dt.turnFor(36,degrees);
@@ -149,21 +160,23 @@ void autonomous(void) {
  dt.driveFor(reverse,6,inches);
  dt.turnFor(-48,degrees);
 dt.driveFor(forward,18,inches);
-dt.driveFor(forward,2,inches);
 wait(1,sec);
 
 //get the sixth ring
-dt.turnFor(-68,degrees);
+dt.turnFor(30,degrees);
 dt.driveFor(forward,18,inches);
 wait(1,sec);
 
-/*
+//put into positive corner
+dt.turnFor(60,degrees);
+dt.driveFor(reverse,5,inches);
+useClinch();
+
   wait(1,seconds);
   dt.turnFor(32,degrees);
   intake.spin(forward);
   dt.driveFor(forward,15,inches);
   wait(2,seconds);
-*/
 
   /*
   wall.spinFor(1,seconds);
