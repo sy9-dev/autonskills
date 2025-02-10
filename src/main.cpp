@@ -110,9 +110,9 @@ void autonomous(void) {
   dt.setTurnVelocity(40,percent);
   intake.setVelocity(100,percent);
 
+  
   //put the ring on the wall stake
   wall.spinFor(forward,1.5,seconds);
-
 
   //get the clinch
   dt.driveFor(reverse,7,inches);
@@ -132,13 +132,13 @@ void autonomous(void) {
   //get the second ring
   dt.driveFor(forward,12,inches);
   wait(2.5,sec);
-
   
   //put into positive corner
   dt.turnFor(45,degrees);
   dt.driveFor(reverse,3,inches);
   wait(.5,sec);
   useClinch();
+
 
   //Get MoGo 2
   dt.turnFor(33,degrees);
@@ -164,7 +164,6 @@ void autonomous(void) {
   dt.driveFor(reverse,7,inches);
   useClinch();
 
-
   //Get Corner 3
   dt.turnFor(43,degrees);
   dt.driveFor(forward,11,inches);
@@ -180,6 +179,7 @@ void autonomous(void) {
   dt.turnFor(33,degrees);
   dt.driveFor(reverse,11,inches);
   useClinch();
+
 
 /*
   //Get Ring 2.2
@@ -292,3 +292,4 @@ int main() {
     wait(100, msec);
   }
 }
+
