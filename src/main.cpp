@@ -106,7 +106,7 @@ void pre_auton(void) {
 }
 
 void autonomous(void) {
-  dt.setDriveVelocity(40,percent);
+  dt.setDriveVelocity(65,percent);
   dt.setTurnVelocity(40,percent);
   intake.setVelocity(100,percent);
 
@@ -118,7 +118,7 @@ void autonomous(void) {
   dt.driveFor(reverse,7,inches);
   wait(.5,sec);
   dt.turnFor(-33,degrees);
-  dt.driveFor(reverse,25,inches,false);
+  dt.driveFor(reverse,30,inches,false);
   wait(0.65,sec);
   useClinch();
   wait(0.2,sec);
@@ -126,43 +126,97 @@ void autonomous(void) {
   //get the first ring
   dt.turnFor(-62,degrees);
   intake.spin(forward);
-  dt.driveFor(forward,7,inches);
-  wait(1.5,sec);
-
-  //get the second ring
-  dt.driveFor(forward,11,inches);
+  dt.driveFor(forward,8,inches);
   wait(2,sec);
 
-  //get the third ring
-  dt.driveFor(reverse,8,inches);
-  dt.turnFor(-25,degrees);
-  dt.driveFor(forward,7,inches);
+  //get the second ring
+  dt.driveFor(forward,12,inches);
+  wait(2.5,sec);
+
   
   //put into positive corner
-  dt.turnFor(-45,degrees);
+  dt.turnFor(45,degrees);
+  dt.driveFor(reverse,3,inches);
+  wait(.5,sec);
+  useClinch();
+
+  //Get MoGo 2
+  dt.turnFor(33,degrees);
+  dt.driveFor(reverse,42,inches,false);
+  wait(5,sec);
+  useClinch();
+
+  //Get Ring 2.1
+  dt.turnFor(95,degrees);
+  intake.spin(forward);
+  dt.driveFor(forward,9,inches);
+  wait(1,seconds);
+
+  //Get Corner 2
+  dt.turnFor(45,deg);
   dt.driveFor(reverse,10,inches);
   useClinch();
 
-  /*
+  //Get MoGo 3
+  dt.turnFor(-45,degrees);
+  dt.driveFor(forward,96,inches);
+  dt.turnFor(-33,degrees);
+  dt.driveFor(reverse,7,inches);
+  useClinch();
+
+
+  //Get Corner 3
+  dt.turnFor(43,degrees);
+  dt.driveFor(forward,11,inches);
+  useClinch();
+
+  //Get Mogo 4
+  dt.driveFor(reverse,11,inches);
+  dt.turnFor(-43,degrees);
+  dt.driveFor(reverse,36,inches);
+  useClinch();
+
+  //Get Corner 4
+  dt.turnFor(33,degrees);
+  dt.driveFor(reverse,11,inches);
+  useClinch();
+
+/*
+  //Get Ring 2.2
+  dt.driveFor(5,inches);
+  wait(1,sec);
+
+  //Get Ring 2.3
+  dt.turnFor(25,degrees);
+  dt.driveFor(7,inches);
+
+
+/*
   //get the third ring
+  dt.driveFor(reverse,8,inches);
+  wait(2,sec);
+
+
+  /*
+  //Get Ring 3
   dt.driveFor(reverse,5,inches);
   dt.turnFor(36,degrees);
   dt.driveFor(forward,10,inches);
   wait(1,sec);
 
-  //get the fourth ring
+  //Get Ring 4
   dt.driveFor(forward,18,inches);
   dt.turnFor(-35,degrees);
   dt.driveFor(forward,6,inches);
   wait(1,sec);
 
- //get the fifth ring
+ //Get Ring 5
  dt.driveFor(reverse,6,inches);
  dt.turnFor(-48,degrees);
 dt.driveFor(forward,18,inches);
 wait(1,sec);
 
-//get the sixth ring
+//Get Ring 6
 dt.turnFor(30,degrees);
 dt.driveFor(forward,18,inches);
 wait(1,sec);
