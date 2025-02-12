@@ -39,7 +39,7 @@ motor_group leftmotors = motor_group(topleft, bottomleft);
 motor_group rightmotors = motor_group(topright, bottomright);
 motor_group intake = motor_group(intake1,intake2,intake3);
 
-drivetrain dt = drivetrain(leftmotors, rightmotors, 300, 320, 320, mm, 1);
+drivetrain dt = drivetrain(leftmotors, rightmotors, 8.63937979737, 15, 9, inches, 1.25);
 
 digital_out* clinch;
 
@@ -134,16 +134,14 @@ void autonomous(void) {
   wait(2.5,sec);
   
   //put into positive corner
-  dt.turnFor(45,degrees);
+  dt.turnFor(-45,degrees);
   dt.driveFor(reverse,3,inches);
   wait(.5,sec);
   useClinch();
 
-
   //Get MoGo 2
   dt.turnFor(33,degrees);
-  dt.driveFor(reverse,42,inches,false);
-  wait(5,sec);
+5  wait(5,sec);
   useClinch();
 
   //Get Ring 2.1
@@ -153,7 +151,7 @@ void autonomous(void) {
   wait(1,seconds);
 
   //Get Corner 2
-  dt.turnFor(45,deg);
+  dt.turnFor(45,deg); 
   dt.driveFor(reverse,10,inches);
   useClinch();
 
@@ -274,7 +272,6 @@ void usercontrol(void) {
     bottomright.spin(forward);
     topleft.spin(forward);
     topright.spin(forward);
-
     wait(20, msec); 
   }
 }
@@ -292,4 +289,5 @@ int main() {
     wait(100, msec);
   }
 }
+
 
