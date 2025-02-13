@@ -39,7 +39,7 @@ motor_group leftmotors = motor_group(topleft, bottomleft);
 motor_group rightmotors = motor_group(topright, bottomright);
 motor_group intake = motor_group(intake1,intake2,intake3);
 
-drivetrain dt = drivetrain(leftmotors, rightmotors, 8.63937979737, 15, 9, inches, 1.25);
+drivetrain dt = drivetrain(leftmotors, rightmotors, 8.63937979737, 15, 9, inches, 1.);
 
 digital_out* clinch;
 
@@ -106,8 +106,8 @@ void pre_auton(void) {
 }
 
 void autonomous(void) {
-  dt.setDriveVelocity(65,percent);
-  dt.setTurnVelocity(40,percent);
+  dt.setDriveVelocity(75,percent);
+  dt.setTurnVelocity(50,percent);
   intake.setVelocity(100,percent);
 
   
