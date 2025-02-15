@@ -39,7 +39,7 @@ motor_group leftmotors = motor_group(topleft, bottomleft);
 motor_group rightmotors = motor_group(topright, bottomright);
 motor_group intake = motor_group(intake1,intake2,intake3);
 
-drivetrain dt = drivetrain(leftmotors, rightmotors, 8.63937979737, 15, 9, inches, 1.);
+drivetrain dt = drivetrain(leftmotors, rightmotors, 8.63937979737, 15, 9, inches, 1.25);
 
 digital_out* clinch;
 
@@ -289,5 +289,3 @@ int main() {
     wait(100, msec);
   }
 }
-
-
